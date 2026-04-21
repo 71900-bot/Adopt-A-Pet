@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="page-heading">Available Pets</h1>
+
+<div class="search-bar">
+    <form method="GET" action="/pets">
+        <input type="text" name="search" placeholder="Search by name..." value="{{ search }}">
+        <select name="species">
+            <option value="">All Species</option>
+            <option value="Dog" {% if species_filter == 'Dog' %}selected{% endif %}>Dog</option>
+            <option value="Cat" {% if species_filter == 'Cat' %}selected{% endif %}>Cat</option>
+            <option value="Rabbit" {% if species_filter == 'Rabbit' %}selected{% endif %}>Rabbit</option>
+        </select>
+        <button type="submit">Search</button>
+        <a href="/pets" class="clear-btn">Clear</a>
+    </form>
+</div>
+
+<div class="pet-list">
+{% for pet in pets %}
+    <div class="pet-card">
+        <div class="fav-btn">
+            <a href="/favourite/{{ pet.id }}">
+                {% if pet.id in favourites %}❤️{% else %}🤍{% endif %}
+            </a>
+        </div>
+        <img src="/static/images/{{ pet.photo }}" alt="{{ pet.name }}">
+        <div class="pet-card-body">
+            <h2>{{ pet.name }}</h2>
+            <p>{{ pet.species }} &nbsp;|&nbsp; Age: {{ pet.age }}</p>
+            <a href="/pets/{{ pet.id }}">Meet {{ pet.name }} →</a>
+        </div>
+    </div>
+{% else %}
+    <p class="no-results">No pets found. <a href="/pets">See all pets</a></p>
+{% endfor %}
+</div>
+{% endblock %}

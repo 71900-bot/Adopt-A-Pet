@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-wrapper">
+    <h1>🐾 Find Your Perfect Pet</h1>
+    <p>Answer two quick questions and we'll match you!</p>
+    <form method="POST" action="/quiz/result">
+
+        <label>What's your lifestyle like?</label>
+        <div class="quiz-options">
+            <label class="option-card">
+                <input type="radio" name="energy" value="active" required>
+                <span>🏃 Active — I love outdoor activities</span>
+            </label>
+            <label class="option-card">
+                <input type="radio" name="energy" value="calm">
+                <span>🛋️ Calm — I prefer relaxing at home</span>
+            </label>
+        </div>
+
+        <label>What's your living space like?</label>
+        <div class="quiz-options">
+            <label class="option-card">
+                <input type="radio" name="space" value="big" required>
+                <span>🏠 Large home or garden</span>
+            </label>
+            <label class="option-card">
+                <input type="radio" name="space" value="small">
+                <span>🏢 Apartment or small space</span>
+            </label>
+        </div>
+
+        <div style="text-align: center; margin-top: 10px;">
+            <button type="submit" class="btn">Find My Match!</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

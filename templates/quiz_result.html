@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 70vh;
+">
+    <div style="
+        background: white;
+        border-radius: 20px;
+        padding: 50px 40px;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        max-width: 480px;
+        width: 100%;
+    ">
+        <p style="color:#999; font-size:16px; margin-bottom:8px;">Your Perfect Match is...</p>
+
+        <h1 style="color:#c0522a; font-size:40px; margin-bottom:24px;">
+            {{ pet.name }}! 🎉
+        </h1>
+
+        <img src="/static/images/{{ pet.photo }}"
+             alt="{{ pet.name }}"
+             style="
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+                border: 4px solid #f5dcc8;
+                margin-bottom: 24px;
+             ">
+
+        <p style="color:#555; font-size:16px; line-height:1.7; margin-bottom:32px;">
+            {{ pet.description }}
+        </p>
+
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+            <a href="/pets/{{ pet.id }}/adopt"
+               style="
+                background:#d9622e;
+                color:white;
+                padding:12px 28px;
+                border-radius:30px;
+                text-decoration:none;
+                font-weight:bold;
+                font-size:16px;
+               ">
+               Adopt {{ pet.name }}
+            </a>
+
+            <a href="/quiz"
+               style="
+                border: 2px solid #d9622e;
+                color:#d9622e;
+                padding:12px 28px;
+                border-radius:30px;
+                text-decoration:none;
+                font-weight:bold;
+                font-size:16px;
+               ">
+               Retake Quiz
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
