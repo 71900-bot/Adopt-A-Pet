@@ -1,4 +1,5 @@
 import sqlite3
+import serverless_wsgi
 from flask import Flask, render_template, request, redirect, session
 
 app = Flask(__name__)
@@ -220,3 +221,6 @@ def records():
 if __name__ == "__main__":
     init_db()
     app.run(debug=True)
+
+def handler(event, context):
+    return serverless_wsgi.handle_request(app, event, context)
