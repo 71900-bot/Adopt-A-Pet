@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">🐾 Adopt A Pet</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/pets">See Pets</a>
+            <a href="/favourites">❤️ Favourites</a>
+            <a href="/quiz">Find My Pet</a>
+            <a href="/stories">Success Stories</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">☰</button>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AdoptAPet — Every pet deserves a loving home.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>

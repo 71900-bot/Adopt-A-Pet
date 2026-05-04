@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="page-heading">❤️ Your Favourites</h1>
+{% if pets %}
+<div class="pet-list">
+{% for pet in pets %}
+    <div class="pet-card">
+        <img src="/static/images/{{ pet.photo }}" alt="{{ pet.name }}">
+        <div class="pet-card-body">
+            <h2>{{ pet.name }}</h2>
+            <p>{{ pet.species }} | Age: {{ pet.age }}</p>
+            <a href="/pets/{{ pet.id }}">Meet {{ pet.name }} →</a>
+            <br>
+            <a href="/favourite/{{ pet.id }}" class="remove-fav">Remove ✕</a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <p style="font-size:48px; margin-bottom:16px;">🐾</p>
+    <p style="font-size:20px; margin-bottom:8px;">No favourites saved yet</p>
+    <p style="color:#aaa; margin-bottom:28px;">Click the 🤍 on any pet card to save them here</p>
+    <a href="/pets" class="btn">Browse Pets</a>
+</div>
+{% endif %}
+{% endblock %}

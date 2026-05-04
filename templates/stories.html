@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="page-heading">🏠 Success Stories</h1>
+<p style="text-align:center; color:#777; margin-bottom:50px; font-size:17px;">
+    Pets who found their forever homes
+</p>
+
+<div class="stories-list">
+    {% for story in success_stories %}
+    <div class="story-card">
+        <img src="/static/images/{{ story.photo }}" alt="{{ story.name }}">
+        <div class="story-content">
+            <span class="badge">{{ story.species }}</span>
+            <h2>{{ story.name }}</h2>
+            <p style="color:#999; font-size:13px; margin-bottom:10px;">
+                Adopted by <strong>{{ story.adopted_by }}</strong>
+            </p>
+            <p>{{ story.story }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

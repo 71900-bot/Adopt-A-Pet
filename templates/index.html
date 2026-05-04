@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="hero">
+    <span class="hero-icon">🐾</span>
+    <h1>Find Your Perfect Pet</h1>
+    <p>Give a loving animal a forever home.</p>
+    <a href="/pets" class="btn">Browse Available Pets</a>
+</div>
+
+<!-- Features Section -->
+<div class="features">
+    <div class="feature-card">
+        <span class="feature-icon">🔍</span>
+        <h3>Browse & Search</h3>
+        <p>Filter pets by species and find your perfect match in seconds.</p>
+    </div>
+    <div class="feature-card">
+        <span class="feature-icon">🧠</span>
+        <h3>Take the Quiz</h3>
+        <p>Not sure which pet suits you? Our quiz matches you to the right companion.</p>
+    </div>
+    <div class="feature-card">
+        <span class="feature-icon">❤️</span>
+        <h3>Save Favourites</h3>
+        <p>Shortlist your favourite pets and come back to them any time.</p>
+    </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="cta-section">
+    <h2>Ready to Meet Your New Best Friend?</h2>
+    <p>Hundreds of pets are waiting for a loving home just like yours.</p>
+    <a href="/quiz" class="btn-white">Find My Match →</a>
+</div>
+
+<!-- Success Stories Preview -->
+<div style="text-align:center; padding: 60px 20px 20px;">
+    <h2 style="color:#c0522a; font-size:32px; margin-bottom:10px;">Happy Endings 🏠</h2>
+    <p style="color:#888; margin-bottom:30px;">Pets who found their forever homes</p>
+    <a href="/stories"
+       style="border:2px solid #d9622e; color:#d9622e; padding:12px 30px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:16px;">
+        Read Their Stories
+    </a>
+</div>
+
+{% endblock %}

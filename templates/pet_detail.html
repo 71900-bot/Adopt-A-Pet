@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="pet-detail-wrapper">
+{% if pet %}
+    <div class="pet-detail">
+        <img src="/static/images/{{ pet.photo }}" alt="{{ pet.name }}">
+        <div class="pet-detail-content">
+            <h1>{{ pet.name }}</h1>
+            <span class="badge">{{ pet.species }}</span>
+            <span class="badge">Age: {{ pet.age }} yrs</span>
+            <p>{{ pet.description }}</p>
+            <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:20px;">
+                <a href="/pets/{{ pet.id }}/adopt"
+                   style="background:#d9622e; color:#ffffff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:16px; display:inline-block;">
+                    Apply to Adopt {{ pet.name }}
+                </a>
+                <a href="/favourite/{{ pet.id }}"
+                   style="border:2px solid #d9622e; color:#d9622e; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:bold; font-size:16px; display:inline-block;">
+                    ❤️ Save to Favourites
+                </a>
+            </div>
+            <br><a href="/pets">← Back to all pets</a>
+        </div>
+    </div>
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-wrapper">
+    <h1>Adopt {{ pet.name }}</h1>
+    <p>Fill in the form below and we'll get in touch with you!</p>
+    <form method="POST">
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="John Smith" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="john@email.com" required>
+
+        <label>Why do you want to adopt {{ pet.name }}?</label>
+        <textarea name="message" rows="4" placeholder="Tell us a little about yourself..."></textarea>
+
+        <div style="text-align: center; margin-top: 10px;">
+            <button type="submit" class="btn">Submit Application</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

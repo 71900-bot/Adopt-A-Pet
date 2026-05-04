@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 70vh;
+">
+    <div style="
+        background: white;
+        border-radius: 20px;
+        padding: 50px 40px;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        max-width: 480px;
+        width: 100%;
+        animation: fadeInUp 0.7s ease both;
+    ">
+        <div style="font-size:56px; margin-bottom:16px;">🎉</div>
+
+        <h1 style="color:#c0522a; font-size:32px; margin-bottom:12px;">
+            Thank you, {{ name }}!
+        </h1>
+
+        <p style="color:#555; font-size:16px; margin-bottom:6px;">
+            Your application to adopt <strong>{{ pet.name }}</strong> has been received.
+        </p>
+        <p style="color:#888; font-size:15px; margin-bottom:28px;">
+            We'll review it and contact you soon.
+        </p>
+
+        <img src="/static/images/{{ pet.photo }}"
+             alt="{{ pet.name }}"
+             style="
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                object-position: center top;
+                border-radius: 50%;
+                border: 4px solid #f5dcc8;
+                margin-bottom: 28px;
+             ">
+
+        <br>
+
+        <a href="/pets"
+           style="
+            background:#d9622e;
+            color:#ffffff;
+            padding:12px 30px;
+            border-radius:30px;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:16px;
+            display:inline-block;
+           ">
+           Browse More Pets
+        </a>
+    </div>
+</div>
+
+{% endblock %}
