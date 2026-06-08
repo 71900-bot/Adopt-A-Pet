@@ -1,4 +1,4 @@
-Welcome to Adopt A Pet 🐾
+# Welcome to Adopt A Pet 🐾
 
 Find your perfect furry companion today!
 
